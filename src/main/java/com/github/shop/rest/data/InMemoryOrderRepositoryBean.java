@@ -12,34 +12,34 @@ public class InMemoryOrderRepositoryBean implements OrderRepository {
 
     private List<Order> orders = new ArrayList<>();
 
-    private static long number = 1;
-
-    private static String getNextNumber() {
-        return String.valueOf(number++);
-    }
-
-    @PostConstruct
-    private void init() {
-        Order bag = Order.builder()
-                .number(getNextNumber())
-                .name("Bag")
-                .price(BigDecimal.valueOf(900.0))
-                .build();
-
-        Order ball = Order.builder()
-                .number(getNextNumber())
-                .name("ball")
-                .price(BigDecimal.valueOf(850.0))
-                .build();
-
-        Order laptop = Order.builder()
-                .number(getNextNumber())
-                .name("laptop")
-                .price(BigDecimal.valueOf(90_000.0))
-                .build();
-
-        orders.addAll(Arrays.asList(bag, ball, laptop));
-    }
+//    private static long number = 1;
+//
+//    private static String getNextNumber() {
+//        return String.valueOf(number++);
+//    }
+//
+//    @PostConstruct
+//    private void init() {
+//        Order bag = Order.builder()
+//                .number(getNextNumber())
+//                .name("Bag")
+//                .price(BigDecimal.valueOf(900.0))
+//                .build();
+//
+//        Order ball = Order.builder()
+//                .number(getNextNumber())
+//                .name("ball")
+//                .price(BigDecimal.valueOf(850.0))
+//                .build();
+//
+//        Order laptop = Order.builder()
+//                .number(getNextNumber())
+//                .name("laptop")
+//                .price(BigDecimal.valueOf(90_000.0))
+//                .build();
+//
+//        orders.addAll(Arrays.asList(bag, ball, laptop));
+//    }
 
     @Override
     public List<Order> findAll() {
@@ -49,5 +49,11 @@ public class InMemoryOrderRepositoryBean implements OrderRepository {
     @Override
     public Optional<Order> findByNumber(String number) {
         return orders.stream().filter(o -> number.equals(o.getNumber())).findFirst();
+    }
+
+    @Override
+    public <T extends Order> T save(T order) {
+        orders.add(order);
+        return order;
     }
 }

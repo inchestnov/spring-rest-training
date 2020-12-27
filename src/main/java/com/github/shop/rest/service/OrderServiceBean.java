@@ -23,4 +23,9 @@ public class OrderServiceBean implements OrderService {
     public Optional<Order> findByNumber(String number) {
         return orderRepository.findByNumber(number);
     }
+
+    @Override
+    public <T extends Order> T save(T order) {
+        return orderRepository.save(order);
+    }
 }

@@ -14,4 +14,6 @@ public class Order {
     private String name;
     private BigDecimal price;
 
+    private Customer customer;
+
 }

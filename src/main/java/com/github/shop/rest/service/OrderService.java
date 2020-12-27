@@ -10,4 +10,7 @@ public interface OrderService {
     List<Order> findAll();
 
     Optional<Order> findByNumber(String number);
+
+    <T extends Order> T save(T order);
+
 }

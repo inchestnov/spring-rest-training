@@ -10,4 +10,6 @@ public interface OrderRepository {
     List<Order> findAll();
 
     Optional<Order> findByNumber(String number);
+
+    <T extends Order> T save(T order);
 }
