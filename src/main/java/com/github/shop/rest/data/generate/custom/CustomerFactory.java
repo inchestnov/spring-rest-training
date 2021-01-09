@@ -1,4 +1,4 @@
-package com.github.shop.rest.data.generated;
+package com.github.shop.rest.data.generate.custom;
 
 import com.github.inchestnov.generatorstarter.AbstractFactory;
 import com.github.inchestnov.generatorstarter.Holder;
@@ -16,7 +16,7 @@ public class CustomerFactory extends AbstractFactory<Customer> {
     @Autowired
     private CustomerHolder customerHolder;
 
-    private static long long_counter = 4;
+    private static long long_counter = 1;
 
     @Override
     protected Customer createInstance() {

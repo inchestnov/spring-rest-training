@@ -1,4 +1,4 @@
-package com.github.shop.rest.data.generated;
+package com.github.shop.rest.data.generate.custom;
 
 import com.github.inchestnov.generatorstarter.AbstractHolder;
 import com.github.shop.rest.model.Customer;

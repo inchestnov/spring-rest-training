@@ -1,7 +1,7 @@
 package com.github.shop.rest.model;
 
 import com.github.inchestnov.generatorstarter.Generated;
-import com.github.shop.rest.data.generated.CustomerFactory;
+import com.github.shop.rest.data.generate.custom.CustomerFactory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
