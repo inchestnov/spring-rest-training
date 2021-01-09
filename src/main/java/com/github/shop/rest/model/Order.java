@@ -1,7 +1,10 @@
 package com.github.shop.rest.model;
 
 import com.github.inchestnov.generatorstarter.Generated;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
